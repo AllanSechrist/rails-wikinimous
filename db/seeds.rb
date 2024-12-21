@@ -7,3 +7,16 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "Resetting Articles"
+Article.destroy_all
+
+puts "Creating Faker Data"
+
+10.times do |index|
+  new_article = Article.create!(
+    title: Faker::Book.title,
+    content: Faker::Quote.mitch_hedberg
+  )
+  puts "Created #{new_article.title}"
+end
+puts "Finished!"
