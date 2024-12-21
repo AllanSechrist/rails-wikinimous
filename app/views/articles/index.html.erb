@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <h1 class="mb-3 text-center">Articles</h1>
+
+  <% @articles.each do |article| %>
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title text-center mb-3">
+          <%= link_to article.title, article_path(article) %>
+        </h1>
+        <h2 class="card-subtitle mb-2">
+          <%= article.content %>
+        </h2>
+      </div>
+    </div>
+  <% end %>
+</div>
